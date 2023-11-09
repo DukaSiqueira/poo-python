@@ -18,7 +18,6 @@ class Conta:
 
     def sacar(self, valor):
         if not valor <= self.__saldo:
-            print("Sem saldo")
             if not valor <= self.__limite:
                 print("Saldo insuficiente")
             else:
@@ -29,3 +28,24 @@ class Conta:
     def transferir(self, conta_destino, valor):
         self.sacar(valor)
         conta_destino.depositar(valor)
+
+    def get_numero(self):
+        return self.__numero
+
+    def get_titular(self):
+        return self.__titular
+
+    def get_saldo(self):
+        return self.__saldo
+
+    def get_limite(self):
+        return self.__limite
+
+    def set_numero(self, numero):
+        self.__numero = numero
+
+    def set_titular(self, titular):
+        self.__titular = titular
+
+    def set_limite(self, limite):
+        self.__limite = limite
